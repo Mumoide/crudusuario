@@ -1,13 +1,34 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
+{% extends "./plantilla.html" %} 
 
-  <body>
-    <h1>Ya estamos en la pagina "Gestion de Usuarios"</h1>
-  </body>
-</html>
+{% block title %} Gestion de Usuarios {% endblock %}
+
+{% block body %}
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+       
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+    <h1>Listado de usuarios</h1>
+       <div class="table-responsive py-2">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Codigo</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+            </tr>
+          </thead>
+          <tbody> 
+            {% for u in usuarios %}
+            <tr>
+                <td>{{u.codigo}}</td>
+                <td>{{u.nombre}}</td>
+                <td>{{u.apellido}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+       </div>
+  </div>
+</div>
+{% endblock %}
