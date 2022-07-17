@@ -31,17 +31,22 @@
         <table class="table table-striped">
           <thead>
             <tr>
+              <th>#</th>
               <th>Codigo</th>
               <th>Nombre</th>
               <th>Apellido</th>
+              <th colspan="2">Opciones</th>
             </tr>
           </thead>
           <tbody> 
             {% for u in usuarios %}
             <tr>
+                <td>{{forloop.counter}}</td>
                 <td>{{u.codigo}}</td>
                 <td>{{u.nombre}}</td>
                 <td>{{u.apellido}}</td>
+                <td><a href="edicionUsuario/{{u.codigo}}" class="btn btn-info">Editar</a></td>
+                <td><a href="eliminarUsuario/{{u.codigo}}" class="btn btn-danger">Eliminar</a></td>
             </tr>
             {% endfor %}
           </tbody>
