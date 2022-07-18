@@ -11,3 +11,8 @@
     });
 })();
 
+var message_ele = document.getElementById('mensaje');
+
+setTimeout(function () {
+  message_ele.style.display = "none";
+}, 5000);
